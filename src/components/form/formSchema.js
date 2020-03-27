@@ -10,18 +10,18 @@ export const formSchema = yup.object().shape({
   specialInstructions: yup
     .string()
     .min(5, "Minimum of 5 characters for instructions please."),
-  Pepperoni: yup.boolean(),
-  Sausage: yup.boolean(),
-  CanadianBacon: yup.boolean(),
-  SpicyItalianSausage: yup.boolean(),
-  GarlicChicken: yup.boolean(),
-  Onions: yup.boolean(),
-  GreenPepper: yup.boolean(),
-  DicedTomatos: yup.boolean(),
-  BlackOlives: yup.boolean(),
-  RoastedGarlic: yup.boolean(),
-  ArtichokeHearts: yup.boolean(),
-  ThreeCheese: yup.boolean(),
-  Pinapple: yup.boolean(),
-  ExtraCheese: yup.boolean()
+  'Pepperoni': yup.boolean(),
+  'Sausage': yup.boolean(),
+  'Canadian Bacon': yup.boolean(),
+  'Spicy Italian Sausage': yup.boolean(),
+  'Garlic Chicken': yup.boolean(),
+  'Onions': yup.boolean(),
+  'Green Pepper': yup.boolean(),
+  'Diced Tomatos': yup.boolean(),
+  'Black Olives': yup.boolean(),
+  'Roasted Garlic': yup.boolean(),
+  'Artichoke Hearts': yup.boolean(),
+  'Three Cheese': yup.boolean(),
+  'Pinapple': yup.boolean(),
+  'Extra Cheese': yup.boolean()
 });

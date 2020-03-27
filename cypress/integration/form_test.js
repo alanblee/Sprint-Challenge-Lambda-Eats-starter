@@ -25,25 +25,25 @@ describe("Test inputs and submit form", function() {
     cy.get('[data-cy="Pepperoni"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="SpicyItalianSausage"]')
+    cy.get('[data-cy="Spicy Italian Sausage"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="GreenPepper"]')
+    cy.get('[data-cy="Green Pepper"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="RoastedGarlic"]')
+    cy.get('[data-cy="Roasted Garlic"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="ArtichokeHearts"]')
+    cy.get('[data-cy="Artichoke Hearts"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="ThreeCheese"]')
+    cy.get('[data-cy="Three Cheese"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="BlackOlives"]')
+    cy.get('[data-cy="Black Olives"]')
       .check()
       .should("be.checked");
-    cy.get('[data-cy="DicedTomatos"]')
+    cy.get('[data-cy="Diced Tomatos"]')
       .check()
       .should("be.checked");
 

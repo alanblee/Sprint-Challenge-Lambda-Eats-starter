@@ -3,7 +3,7 @@ import axios from "axios";
 import * as yup from "yup";
 import { formSchema } from "./formSchema";
 import { sizeInputs, sauceInputs, toppingInputs } from "./formInputs";
-import "./form.css"
+import "./form.css";
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
@@ -16,21 +16,7 @@ const Form = () => {
     orderFor: "",
     size: "",
     sauce: "",
-    specialInstructions: "",
-    Pepperoni: "",
-    Sausage: "",
-    CanadianBacon: "",
-    SpicyItalianSausage: "",
-    GarlicChicken: "",
-    Onions: "",
-    GreenPepper: "",
-    DicedTomatos: "",
-    BlackOlives: "",
-    RoastedGarlic: "",
-    ArtichokeHearts: "",
-    ThreeCheese: "",
-    Pinapple: "",
-    ExtraCheese: ""
+    specialInstructions: ""
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [pizza, setPizza] = useState([]);
@@ -128,7 +114,7 @@ const Form = () => {
             type="checkbox"
             name={topping.name}
             onChange={handleChange}
-            value={topping.value}
+            value={topping.name}
             data-cy={topping.name}
           />
           {topping.name}
@@ -140,7 +126,6 @@ const Form = () => {
     <div className="form-page">
       <h3>Build your pizza</h3>
       <form className="form-wrapper" onSubmit={handleSubmit}>
-        
         <label htmlFor="orderFor">
           Order for
           <input
@@ -159,23 +144,33 @@ const Form = () => {
         </label>
 
         <label htmlFor="size">
-          Choose a size
-          Required
+          <span className="span-select">
+            Choose a size
+            <br />
+          </span>
+          <span className="required">Required</span>
+
           <select name="size" id="size" onChange={handleChange} data-cy="size">
             {renderSelectOptions()}
           </select>
         </label>
 
         <label htmlFor="sauce" className="sauce">
-          Choice of Sauce
-          Required
+          <span className="span-select">
+            Choice of Sauce
+            <br />
+          </span>
+          <span className="required">Required</span>
+
           {renderRadioOptions()}
         </label>
 
         <label htmlFor="toppings" className="topping">
-          Add Toppings
-          <br/>
-          Choose them all
+          <span className="span-select">
+            Add Toppings
+            <br />
+          </span>
+          <span className="required">Pro tip: choose all of them</span>
           {renderCheckbox()}
         </label>
 

@@ -7,59 +7,45 @@ export const sauceInputs = [
 ];
 export const toppingInputs = [
   {
-    name: "Pepperoni",
-    value: "Pepperoni"
+    name: "Pepperoni"
   },
   {
-    name: "Sausage",
-    value: "Sausage"
+    name: "Sausage"
   },
   {
-    name: "CanadianBacon",
-    value: "Canadian Bacon"
+    name: "Canadian Bacon"
   },
   {
-    name: "SpicyItalianSausage",
-    value: "Spicy Italian Sausage"
+    name: "Spicy Italian Sausage"
   },
   {
-    name: "GarlicChicken",
-    value: "Garlic Chicken"
+    name: "Garlic Chicken"
   },
   {
-    name: "Onions",
-    value: "Onions "
+    name: "Onions"
   },
   {
-    name: "GreenPepper",
-    value: "Green Pepper"
+    name: "Green Pepper"
   },
   {
-    name: "DicedTomatos",
-    value: "Diced Tomatos"
+    name: "Diced Tomatos"
   },
   {
-    name: "BlackOlives",
-    value: "Black Olives"
+    name: "Black Olives"
   },
   {
-    name: "RoastedGarlic",
-    value: "Roasted Garlic"
+    name: "Roasted Garlic"
   },
   {
-    name: "ArtichokeHearts",
-    value: "Artichoke Hearts"
+    name: "Artichoke Hearts"
   },
   {
-    name: "ThreeCheese",
-    value: "Three Cheese"
+    name: "Three Cheese"
   },
   {
-    name: "Pinapple",
-    value: "Pinapple"
+    name: "Pinapple"
   },
   {
-    name: "ExtraCheese",
-    value: "Extra Cheese"
+    name: "Extra Cheese"
   }
 ];
