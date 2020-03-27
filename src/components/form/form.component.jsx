@@ -50,15 +50,16 @@ const Form = () => {
     specialInstructions: ""
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
-  const [pizza, setPizza] = useState([]);
+  const [pizza, setPizza] = useState();
+  
   //useEffect to check if form is valid
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
       setButtonDisabled(!valid);
     });
   }, [formValues]);
-  //handle validations
 
+  //handle validations
   const validateChange = event => {
     const { name } = event.target;
     yup
@@ -97,7 +98,7 @@ const Form = () => {
     axios
       .post("https://reqres.in/api/users", formValues)
       .then(res => {
-        setPizza([...pizza, res.data]);
+        setPizza(res.data);
         handleClose();
         //reset form on success
         setFormValues({
@@ -144,12 +145,12 @@ const Form = () => {
         <span key={indx} className="topping-wrapper">
           <input
             type="checkbox"
-            name={topping.name}
+            name={topping}
             onChange={handleChange}
-            value={topping.name}
-            data-cy={topping.name}
+            value={topping}
+            data-cy={topping}
           />
-          {topping.name}
+          {topping}
         </span>
       );
     });
