@@ -4,6 +4,8 @@ describe("Test inputs and submit form", function() {
   });
 
   it("Adds text to inputs and submits the form", function() {
+    //click modal
+    cy.get('[data-cy="modal-btn"]').click();
     //check text inputs
     cy.get('[data-cy="orderFor"]')
       .type("Alan")
