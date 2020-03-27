@@ -51,7 +51,7 @@ const Form = () => {
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [pizza, setPizza] = useState();
-  
+
   //useEffect to check if form is valid
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
@@ -147,7 +147,6 @@ const Form = () => {
             type="checkbox"
             name={topping}
             onChange={handleChange}
-            value={topping}
             data-cy={topping}
           />
           {topping}
