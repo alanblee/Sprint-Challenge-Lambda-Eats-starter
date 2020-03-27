@@ -13,9 +13,6 @@ import "./form.css";
 
 const useStyles = makeStyles(theme => ({
   modal: {
-    // display: "flex",
-    // alignItems: "center",
-    // justifyContent: "center",
     overflow: "scroll",
     margin: "1% 10%"
   },
@@ -160,7 +157,7 @@ const Form = () => {
   return (
     <div className="form-page">
       <button type="button" onClick={handleOpen} data-cy="modal-btn">
-        click for pizza
+        CLICK FOR PIZZAA
       </button>
       <Modal
         aria-labelledby="transition-modal-title"

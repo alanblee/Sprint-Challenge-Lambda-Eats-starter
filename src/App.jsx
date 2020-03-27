@@ -14,7 +14,7 @@ const App = () => {
           <Home />
         </Route>
         <Route path="/pizza">
-          <Form />
+        <Form />
         </Route>
       </Switch>
     </div>

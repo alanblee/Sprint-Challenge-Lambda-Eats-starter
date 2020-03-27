@@ -2,4 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  padding: 1%;
+}
+.nav-right {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+.nav-right a {
+  margin-right: 20%;
+  text-decoration: none;
+}
+a:visited, a:active {
+  color: black;
 }
