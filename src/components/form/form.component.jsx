@@ -3,6 +3,7 @@ import axios from "axios";
 import * as yup from "yup";
 import { formSchema } from "./formSchema";
 import { sizeInputs, sauceInputs, toppingInputs } from "./formInputs";
+import "./form.css"
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
@@ -104,7 +105,7 @@ const Form = () => {
   const renderRadioOptions = () => {
     return sauceInputs.map((choice, indx) => {
       return (
-        <span key={indx}>
+        <span key={indx} className="sauce-wrapper">
           <input
             name="sauce"
             type="radio"
@@ -122,7 +123,7 @@ const Form = () => {
   const renderCheckbox = () => {
     return toppingInputs.map((topping, indx) => {
       return (
-        <span key={indx}>
+        <span key={indx} className="topping-wrapper">
           <input
             type="checkbox"
             name={topping.name}
@@ -141,7 +142,7 @@ const Form = () => {
       <form className="form-wrapper" onSubmit={handleSubmit}>
         
         <label htmlFor="orderFor">
-          <h4>Order for:</h4>
+          Order for
           <input
             data-cy="orderFor"
             type="text"
@@ -158,27 +159,28 @@ const Form = () => {
         </label>
 
         <label htmlFor="size">
-          <h4>Choice of size</h4>
-          <p>Required</p>
+          Choose a size
+          Required
           <select name="size" id="size" onChange={handleChange} data-cy="size">
             {renderSelectOptions()}
           </select>
         </label>
 
-        <label htmlFor="sauce">
-          <h4>Choice of Sace</h4>
-          <p>Required</p>
+        <label htmlFor="sauce" className="sauce">
+          Choice of Sauce
+          Required
           {renderRadioOptions()}
         </label>
 
-        <label htmlFor="toppings">
-          <h4>Add Toppings</h4>
-          <p>Choose them all</p>
+        <label htmlFor="toppings" className="topping">
+          Add Toppings
+          <br/>
+          Choose them all
           {renderCheckbox()}
         </label>
 
         <label htmlFor="specialInstructions">
-          <h4>Special Instructions</h4>
+          Special Instructions
           <input
             type="textarea"
             name="specialInstructions"
@@ -193,8 +195,8 @@ const Form = () => {
             </p>
           ) : null}
         </label>
-        
-        <div className="btn-wrapper">
+
+        <div className="btn-container">
           <button disabled={buttonDisabled} data-cy="form-btn">
             Add to order
           </button>
