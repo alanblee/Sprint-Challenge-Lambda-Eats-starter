@@ -1,6 +1,10 @@
 import * as yup from "yup";
 
 export const formSchema = yup.object().shape({
+  orderFor: yup
+    .string()
+    .min(2, "Minimum of 2 characters.")
+    .required("Name field required."),
   size: yup.string().required("Please choose a size."),
   sauce: yup.string().required("Please choose a sauce."),
   specialInstructions: yup

@@ -6,11 +6,13 @@ import { sizeInputs, sauceInputs, toppingInputs } from "./formInputs";
 
 const Form = () => {
   const [formValues, setFormValues] = useState({
-    size: "",
+    orderFor: "",
+    size: "X-Small",
     sauce: "",
     specialInstructions: ""
   });
   const [errors, setErrors] = useState({
+    orderFor: "",
     size: "",
     sauce: "",
     specialInstructions: "",
@@ -30,7 +32,7 @@ const Form = () => {
     ExtraCheese: ""
   });
   const [buttonDisabled, setButtonDisabled] = useState(true);
-
+  const [pizza, setPizza] = useState([]);
   //useEffect to check if form is valid
   useEffect(() => {
     formSchema.isValid(formValues).then(valid => {
@@ -38,6 +40,7 @@ const Form = () => {
     });
   }, [formValues]);
   //handle validations
+
   const validateChange = event => {
     const { name } = event.target;
     yup
@@ -72,7 +75,20 @@ const Form = () => {
   //handle submit
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(formValues);
+    //POST request
+    axios
+      .post("https://reqres.in/api/users", formValues)
+      .then(res => {
+        setPizza([...pizza, res.data]);
+        //reset form on success
+        setFormValues({
+          orderFor: "",
+          size: "X-Small",
+          sauce: "",
+          specialInstructions: ""
+        });
+      })
+      .catch(err => console.log(err.response));
   };
   //render select
   const renderSelectOptions = () => {
@@ -121,6 +137,21 @@ const Form = () => {
     <div className="form-page">
       <h3>Build your pizza</h3>
       <form className="form-wrapper" onSubmit={handleSubmit}>
+        <label htmlFor="orderFor">
+          <h4>Order for:</h4>
+          <input
+            type="text"
+            name="orderFor"
+            value={formValues.orderFor}
+            onChange={handleChange}
+            placeholder="Provide a name for order"
+          />
+          {errors["orderFor"].length > 0 ? (
+            <p data-cy={`error-orderFor`} className="error">
+              {errors["orderFor"]}
+            </p>
+          ) : null}
+        </label>
         <label htmlFor="size">
           <h4>Choice of size</h4>
           <p>Required</p>
@@ -157,6 +188,7 @@ const Form = () => {
           <button disabled={buttonDisabled}>Add to order</button>
         </div>
       </form>
+      <pre>{JSON.stringify(pizza, null, 2)}</pre>
     </div>
   );
 };
