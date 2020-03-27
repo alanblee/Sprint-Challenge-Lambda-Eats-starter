@@ -110,6 +110,7 @@ const Form = () => {
             type="radio"
             value={choice}
             onChange={handleChange}
+            data-cy={choice}
           />
           {choice}
         </span>
@@ -127,6 +128,7 @@ const Form = () => {
             name={topping.name}
             onChange={handleChange}
             value={topping.value}
+            data-cy={topping.name}
           />
           {topping.name}
         </span>
@@ -137,9 +139,11 @@ const Form = () => {
     <div className="form-page">
       <h3>Build your pizza</h3>
       <form className="form-wrapper" onSubmit={handleSubmit}>
+        
         <label htmlFor="orderFor">
           <h4>Order for:</h4>
           <input
+            data-cy="orderFor"
             type="text"
             name="orderFor"
             value={formValues.orderFor}
@@ -152,23 +156,27 @@ const Form = () => {
             </p>
           ) : null}
         </label>
+
         <label htmlFor="size">
           <h4>Choice of size</h4>
           <p>Required</p>
-          <select name="size" id="size" onChange={handleChange}>
+          <select name="size" id="size" onChange={handleChange} data-cy="size">
             {renderSelectOptions()}
           </select>
         </label>
+
         <label htmlFor="sauce">
           <h4>Choice of Sace</h4>
           <p>Required</p>
           {renderRadioOptions()}
         </label>
+
         <label htmlFor="toppings">
           <h4>Add Toppings</h4>
           <p>Choose them all</p>
           {renderCheckbox()}
         </label>
+
         <label htmlFor="specialInstructions">
           <h4>Special Instructions</h4>
           <input
@@ -177,6 +185,7 @@ const Form = () => {
             value={formValues.specialInstructions}
             onChange={handleChange}
             placeholder="Anything else you would like to add?"
+            data-cy="specialInstructions"
           />
           {errors["specialInstructions"].length > 0 ? (
             <p data-cy={`error-specialInstructions`} className="error">
@@ -184,8 +193,11 @@ const Form = () => {
             </p>
           ) : null}
         </label>
+        
         <div className="btn-wrapper">
-          <button disabled={buttonDisabled}>Add to order</button>
+          <button disabled={buttonDisabled} data-cy="form-btn">
+            Add to order
+          </button>
         </div>
       </form>
       <pre>{JSON.stringify(pizza, null, 2)}</pre>
