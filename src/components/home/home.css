@@ -1,4 +1,8 @@
 .cta {
-  background-image: url("../../Assets/Pizza.jpg");
-  height: 100vh;
+  background: url("../../Assets/Pizza.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50vh;
 }
