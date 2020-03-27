@@ -6,18 +6,60 @@ export const sauceInputs = [
   "Spinach Alfredo"
 ];
 export const toppingInputs = [
-  "Pepperoni",
-  "Sausage",
-  "Canadian Bacon",
-  "Spicy Italian Sausage",
-  "Garlic Chicken",
-  "Onions",
-  "Green Pepper",
-  "Diced Tomatos",
-  "Black Olives",
-  "Roasted Garlic",
-  "Artichoke Hearts",
-  "Three Cheese",
-  "Pinapple",
-  "Extra Cheese"
+  {
+    name: "Pepperoni",
+    value: "Pepperoni"
+  },
+  {
+    name: "Sausage",
+    value: "Sausage"
+  },
+  {
+    name: "CanadianBacon",
+    value: "Canadian Bacon"
+  },
+  {
+    name: "SpicyItalianSausage",
+    value: "Spicy Italian Sausage"
+  },
+  {
+    name: "GarlicChicken",
+    value: "Garlic Chicken"
+  },
+  {
+    name: "Onions",
+    value: "Onions "
+  },
+  {
+    name: "GreenPepper",
+    value: "Green Pepper"
+  },
+  {
+    name: "DicedTomatos",
+    value: "Diced Tomatos"
+  },
+  {
+    name: "BlackOlives",
+    value: "Black Olives"
+  },
+  {
+    name: "RoastedGarlic",
+    value: "Roasted Garlic"
+  },
+  {
+    name: "ArtichokeHearts",
+    value: "Artichoke Hearts"
+  },
+  {
+    name: "ThreeCheese",
+    value: "Three Cheese"
+  },
+  {
+    name: "Pinapple",
+    value: "Pinapple"
+  },
+  {
+    name: "ExtraCheese",
+    value: "Extra Cheese"
+  }
 ];
