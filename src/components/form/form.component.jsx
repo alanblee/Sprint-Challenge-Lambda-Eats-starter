@@ -9,12 +9,12 @@ const Form = () => {
     sauce: "",
     toppings: [],
     glutten: false,
-    specialInstrictions: ""
+    specialInstructions: ""
   });
 
   //handleChange
   const handleChange = event => {
-    console.log(event.target);
+    console.log(event.target.value);
   };
 
   //render select
@@ -29,17 +29,16 @@ const Form = () => {
   };
   //render radio options
   const renderRadioOptions = () => {
-    return sauceInputs.map((sauce, indx) => {
+    return sauceInputs.map((choice, indx) => {
       return (
         <span key={indx}>
           <input
             name="sauce"
             type="radio"
-            value={sauce}
+            value={choice}
             onChange={handleChange}
-            checked={formValues.sauce}
           />
-          {sauce}
+          {choice}
         </span>
       );
     });
@@ -82,6 +81,19 @@ const Form = () => {
           <p>Choose them all</p>
           {renderCheckbox()}
         </label>
+        <label htmlFor="specialInstructions">
+          <h4>Special Instructions</h4>
+          <input
+            type="textarea"
+            name="specialInstructions"
+            value={formValues.specialInstructions}
+            onChange={handleChange}
+            placeholder="Anything else you would like to add?"
+          />
+        </label>
+        <div className="btn-wrapper">
+          <button>Add to order</button>
+        </div>
       </form>
     </div>
   );
