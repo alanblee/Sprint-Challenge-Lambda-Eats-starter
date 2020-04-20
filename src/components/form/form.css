@@ -1,0 +1,116 @@
+.form-page {
+  background: url("../../Assets/pizza-unsplash.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 50vh;
+}
+h3 {
+  text-align: center;
+  font-size: 3rem;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.error {
+  font-size: 1.3rem;
+  color: red;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0.5% 0;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  width: 45%;
+}
+input,
+select {
+  display: block;
+  margin: 5px 0 10px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  background-color: white;
+}
+select {
+  height: 4rem;
+  width: 100%;
+}
+input:focus,
+select:focus {
+  outline: none;
+}
+
+.topping-wrapper,
+.sauce-wrapper {
+  display: flex;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.topping,
+.sauce {
+  display: inline-block;
+}
+
+.topping input {
+  width: 10%;
+  display: inline-block;
+}
+.sauce input {
+  width: 10%;
+  display: inline-block;
+}
+
+.btn-container {
+  width: 30%;
+  margin-left: -10%;
+}
+button {
+  width: 100%;
+  padding: 8px 11px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  outline: none;
+  background-image: linear-gradient(to right, #8acf18, #1ee7e2);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:disabled {
+  background-image: none;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.1);
+  cursor: not-allowed;
+}
+
+.span-select {
+  display: block;
+  margin-bottom: 3%;
+}
+.required {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 3%;
+}
+
+pre {
+  position: absolute;
+  color: white;
+  border: 2px solid white;
+}
